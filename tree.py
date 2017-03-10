@@ -94,7 +94,7 @@ def build_tree(data,predictors,target):
     return Internal(build_tree(left,predictors,target),
                     build_tree(right,predictors,target),
                     var,
-                    val)x
+                    val)
     
 def predict(tree,x,target):
     """Predict x.target from tree."""
@@ -105,12 +105,12 @@ def predict(tree,x,target):
 
     
 class ClassificationTree:
-    """ A classification tree is built from three things:
-         data       -- a list of python objects,
-         predictors -- strings corresponding to attributes 
-                       to be used for prediction,
-         target     -- the attribute to predict. """
     def __init__(self,data,predictors,target):
+        """ A classification tree is built from three things:
+              data       -- a list of python objects,
+              predictors -- strings corresponding to attributes 
+                            to be used for prediction,
+              target     -- the attribute to predict. """
         self.data = data
         self.predictors = predictors
         self.target = target
